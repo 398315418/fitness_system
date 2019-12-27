@@ -75,7 +75,7 @@ public class DB {
 	 */
 	private void createConnection() {
 		try {
-			con = (Connection) DriverManager.getConnection(url + databaseName, userName, password);
+			con = (Connection) DriverManager.getConnection(url + databaseName+"?useUnicode=true&characterEncoding=UTF-8", userName, password);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
