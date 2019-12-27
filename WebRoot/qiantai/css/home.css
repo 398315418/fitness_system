@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document */
+#main{height:889px;background:#09c url(../images/mainback.jpg) center top no-repeat;}
+.main{width:1230px;margin:0 auto;position:relative}
+.main>div{position:absolute}
+.logo{width:149px;height:71px;top:45px;left:0}
+.logo a{display:block;width:149px;height:71px;background:url(../images/hlogo.png) no-repeat}
+.reglog{width:302px;height:47px;text-align:center;line-height:40px;font-size:20px;color:#09c;top:75px;right:0;background:url(../images/reglog.png) no-repeat}
+.reglog a{font-size:20px;color:#09c;}
+.menu{width:140px;height:190px;top:190px;left:0;}
+.menu ul li{display:block;width:140px;height:33px;margin-bottom:1px;line-height:33px;}
+.menu ul li.on a{color:#fff;background:#7eb7b3}
+.menu ul li a{display:block;font-size:20px;font-family:"微软雅黑";color:#9fa0a0;text-decoration:none;padding-left:10px;}
+.menu ul li a:hover{color:#fff;background:#7eb7b3}
+.nav{width:1230px;height:145px;left:0px;top:650px;background:none}
+.nav ul li{width:145px;height:145px;margin-right:10px;background:url(../images/round.png) no-repeat;display:block;float:left}
+.nav ul li.last{margin-right:0}
+.nav ul li a{display:block;font-size:38px;font-weight:normal;color:#fff;text-align:center;text-decoration:none}
+.nav ul li.t2 a{line-height:145px;}
+.nav ul li.t3 a{line-height:145px;font-size:25px}
+.nav ul li.t4 a{margin-top:40px;font-size:30px}
+/*list*/
+.container{height:auto}
+.container .left{width:218px;height:auto;float:left;}
+.container .left .leftbody{border:1px solid #c9caca;margin-bottom:10px}
+.h3{font-size:18px;line-height:33px;height:33px;background:#efefef;font-family:"黑体";text-align:center;color:#333;padding-left:10px;}
+.h3 span{display:block;float:left;line-height:33px;font-size:18px;font-family:"黑体";color:#333;}
+.leftmenu{padding-bottom:10px;}
+.leftmenu ul li{line-height:34px;height:34px;text-align:center;display:block;border-bottom:1px dashed #efefef}
+.leftmenu ul li a{font-size:14px;font-family:"黑体";color:#333;text-decoration:none;}
+/*leftbody2*/
+.leftbody2{padding:5px;}
+.leftbody2 ul li{padding:10px 0;border-bottom:1px dashed #efefef;display:block;}
+.leftbody2 ul li .face{width:70px;height:90px;margin-left:8px;float:left;margin-right:15px;}
+.leftbody2 ul li .text{width:105px;height:auto;padding-top:15px;float:left}
+.leftbody2 ul li .text a{font-size:14px;font-family:"黑体";color:#333;text-decoration:none;display:block;margin-bottom:10px;}
+.leftbody2 ul li .text p.zc{font-size:10px;font-family:"黑体";color:#09c;margin-bottom:10px;}
+.leftbody2 ul li .text p.jj{font-size:10px;font-family:"黑体";color:#333;}
+.container .right{width:995px;height:auto;float:right}
+.container .right .filterbox{border:1px solid #c9caca;margin-bottom:10px}
+.container .right .filterbody{padding:10px 15px;}
+.container .right .filterbody ul li{line-height:20px;height:20px;padding-bottom:10px;border-bottom:1px dashed #efefef}
+.container .right .filterbody ul li span{width:80px;text-align:center;display:inline-block;margin-right:20px;}
+.container .right .filterbody ul li a{display:inline-block;color:#09c;padding:0 5px;text-decotation:none;}
+.container .right .filterbody ul li a.on{background:#09c;color:#fff;}
+.list li{width:220px;height:245px;float:left;margin-right:38px;margin-bottom:10px}
+.list li.noRmargin{margin-right:0px}
+.list li .face{width:218px;height:144px;padding-top:10px;text-align:center;border:1px solid #c9caca;margin-bottom:10px;}
+.list li .face img{width:108px;height:134px;}
+.list li .text{width:170px;height:72px;padding-top:5px;background:#efefef;text-align:left;padding-left:50px;}
+.list li .text a{font-size:18px;font-family:"黑体";color:#333;text-decoration:none;display:block;margin-bottom:10px;}
+.list li .text p.zc{font-size:14px;font-family:"黑体";color:#09c;margin-bottom:10px;}
+.list li .text p.jj{font-size:14px;font-family:"黑体";color:#333;}
+/*reglogin*/
+#reglogin{height:1024px;background:#09c}
+.reglogin{width:1230px;margin:0 auto;padding-top:45px;position:relative}
+.reglogin .logo{width:151px;height:71px;}
+.reglogin .logo a{display:block;background:url(../images/slogo.png) no-repeat}
+.ibox{width:600px;height:440px;background:url(../images/rlback.png) no-repeat;position:absolute;left:50%;margin-left:-300px;top:260px}
+.ibox h3{text-align:center;font-size:23px;color:#000;padding-top:40px;margin-bottom:65px;}
+.ibox h3.r{margin-bottom:40px;}
+.ibox .row{margin-bottom:25px;padding-left:115px;}
+.ibox .rowa{margin-bottom:0px;padding-left:115px;}
+.ibox .row.r{margin-bottom:20px}
+.ibox span{width:95px;padding-top:3px;display:block;float:left;font-size:18px;color:#fff;}
+.ibox .row input[type=text],.ibox .row input[type=password],.ibox .rowa input[type=text],.ibox .rowa input[type=password]{width:175px;height:25px;height:20px\0/;padding-top:5px\0//*ie8*/;*+height:20px;*+padding-top:5px;/*ie7*/border:1px solid #89cfe6;background:#fff;}
+:root .ibox .row input[type=text],.ibox .row input[type=password],.ibox .rowa input[type=text],.ibox .rowa input[type=password]{height:25px\0/;padding-top:0px\0/}
+.ibox .rowi{font-size:17px;color:#fff;padding-left:210px;}
+.ibox .rowi a{font-size:17px;color:#fff;}
+.ibox .rowi.r{font-size:12px;line-height:20px;padding:10px 0;padding-left:210px}
+.btnin{padding-left:210px;padding-top:115px}
+.btnin.r{padding-top:35px;*+padding-top:25px}

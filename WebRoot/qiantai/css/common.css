@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+body{background:#fff;font-size:14px;font-family:"微软雅黑";color:#666}
+a:link,a:visited{color:#333;text-decoration:none;font-size:12px;font-family:"微软雅黑";}
+a:hover,a:active{color:#109900;text-decoration:underline;font-size:12px;font-family:"微软雅黑";}
+.float_left{float:left;width:auto}
+.float_right{float:right;width:auto}
+.clear{clear:both}
+.blank10{height:10px;}
+.clearfix {*zoom:1}
+.clearfix:before, .clearfix:after { display: table; content: ""; line-height: 0 }
+.clearfix:after { clear: both }
