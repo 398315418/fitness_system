@@ -46,7 +46,20 @@
 </div>
 
 <div class="formbody">
-	<div class="formtitle" style="cursor: pointer;" id="formtitle"><span>请选择日期</span></div>
+	<div class="formtitle" style="cursor: pointer;" id="formtitle"><span>日期查询</span></div>
+	<ul class="forminfo" style="display: none;" id="forminfo">
+		<li>
+			<label>日期</label>
+			<input name="date" id="xilie" value="<%=date %>" type="text" class="dfinput required date " />
+		</li>
+		<li>
+			<label>&nbsp;</label>
+			<input name="" type="submit" class="btn" value="查询"/>
+		</li>
+	</ul>
+</div>
+<div class="formbody">
+	<div class="formtitle" style="cursor: pointer;" id="formtitle"><span>日期查询</span></div>
 	<ul class="forminfo" style="display: none;" id="forminfo">
 		<li>
 			<label>日期</label>
