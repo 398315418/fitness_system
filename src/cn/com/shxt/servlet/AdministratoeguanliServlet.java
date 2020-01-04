@@ -42,12 +42,12 @@ public class AdministratoeguanliServlet extends HttpServlet {
 				 Activity s = new Activity();
 				s.setId(fut.getParameter("id"));
 				s.setJs(fut.getParameter("js"));
-				s.setQiwen(fut.getParameter("qiwen"));
-				s.setRizhao(fut.getParameter("rizhao"));
-				s.setWeizhi(fut.getParameter("weizhi"));
-				s.setDate(fut.getParameter("date"));
+				s.setQiwen(fut.getParameter("content"));
+				s.setRizhao(fut.getParameter("photo"));
+				s.setWeizhi(fut.getParameter("name"));
+				s.setDate(fut.getParameter("brand"));
 				new AdministratoeguanliService().addSp(s);
-				response.sendRedirect("index/admin/shangpin/addSp.jsp");
+				response.sendRedirect("shangpin.do?method=selSp");
 				}else if("selSp".equals(method)){//查看器械信息
 					selSp(request,response);	
 				}else if("showSp".equals(method)){//显示器械信息到修改页面
@@ -61,10 +61,10 @@ public class AdministratoeguanliServlet extends HttpServlet {
 					 Activity s = new Activity();
 					s.setId(fut.getParameter("id"));
 					s.setJs(fut.getParameter("js"));
-					s.setQiwen(fut.getParameter("qiwen"));
-					s.setRizhao(fut.getParameter("rizhao"));
-					s.setWeizhi(fut.getParameter("weizhi"));
-					s.setDate(fut.getParameter("date"));
+					s.setQiwen(fut.getParameter("content"));
+					s.setRizhao(fut.getParameter("photo"));
+					s.setWeizhi(fut.getParameter("name"));
+					s.setDate(fut.getParameter("brand"));
 					new  AdministratoeguanliService().updateSp(s);
 					response.sendRedirect("shangpin.do?method=selSp");
 				}else if("deleteSp".equals(method)){//删除器械信息
@@ -76,13 +76,13 @@ public class AdministratoeguanliServlet extends HttpServlet {
 					 fut.upload();
 					 Hair_teacher j = new Hair_teacher();
 					j.setId(fut.getParameter("id"));
-					j.setChushui(fut.getParameter("chushui"));
-					j.setDimao(fut.getParameter("dimao"));
-					j.setMianji(fut.getParameter("mianji"));
+					j.setWeizhi(fut.getParameter("name"));
+					j.setChushui(fut.getParameter("age"));
+					j.setMianji(fut.getParameter("phone"));
+					j.setZuowu(fut.getParameter("address"));
+					j.setType(fut.getParameter("worktime"));
+					j.setDimao(fut.getParameter("detail"));
 					j.setPhoto(fut.getParameter("photo"));
-					j.setType(fut.getParameter("type"));
-					j.setWeizhi(fut.getParameter("weizhi"));
-					j.setZuowu(fut.getParameter("zuowu"));
 					
 					new AdministratoeguanliService().addQc(j);
 					response.sendRedirect("shangpin.do?method=selQc");
@@ -97,15 +97,15 @@ public class AdministratoeguanliServlet extends HttpServlet {
 						 FileUploadTool fut = new FileUploadTool(request);
 						 fut.upload();
 						 Hair_teacher j = new Hair_teacher();
-						j.setId(fut.getParameter("id"));
-						j.setChushui(fut.getParameter("chushui"));
-						j.setDimao(fut.getParameter("dimao"));
-						j.setMianji(fut.getParameter("mianji"));
-						j.setPhoto(fut.getParameter("photo"));
-						j.setType(fut.getParameter("type"));
-						j.setWeizhi(fut.getParameter("weizhi"));
-						j.setZuowu(fut.getParameter("zuowu"));
-						
+						 j.setId(fut.getParameter("id"));
+							j.setWeizhi(fut.getParameter("name"));
+							j.setChushui(fut.getParameter("age"));
+							j.setMianji(fut.getParameter("phone"));
+							j.setZuowu(fut.getParameter("address"));
+							j.setType(fut.getParameter("worktime"));
+							j.setDimao(fut.getParameter("detail"));
+							j.setPhoto(fut.getParameter("photo"));
+							
 						new AdministratoeguanliService().updateQc(j);
 						response.sendRedirect("shangpin.do?method=selQc");
 					}else if("deleteQc".equals(method)){//删除教练信息
@@ -119,9 +119,9 @@ public class AdministratoeguanliServlet extends HttpServlet {
 						Serve c = new Serve();
 						c.setId(fut.getParameter("id"));
 						c.setFname(fut.getParameter("fname"));
-						c.setYshui(fut.getParameter("yshui"));
-						c.setBianhao(fut.getParameter("bianhao"));
-						c.setTotal(fut.getParameter("total"));
+						c.setYshui(fut.getParameter("photo"));
+						c.setBianhao(fut.getParameter("detail"));
+						c.setTotal(fut.getParameter("price"));
 						new AdministratoeguanliService().addCz(c);
 						response.sendRedirect("index/admin/chongzhi/addCz.jsp");
 					}else if("selCz".equals(method)){//管理员查看课程信息
@@ -137,9 +137,9 @@ public class AdministratoeguanliServlet extends HttpServlet {
 						Serve c = new Serve();
 						c.setId(fut.getParameter("id"));
 						c.setFname(fut.getParameter("fname"));
-						c.setYshui(fut.getParameter("yshui"));
-						c.setBianhao(fut.getParameter("bianhao"));
-						c.setTotal(fut.getParameter("total"));
+						c.setYshui(fut.getParameter("photo"));
+						c.setBianhao(fut.getParameter("detail"));
+						c.setTotal(fut.getParameter("price"));
 						new AdministratoeguanliService().updateCz(c);
 						response.sendRedirect("shangpin.do?method=selCz");
 					}else if("deleteCz".equals(method)){//删除课程信息

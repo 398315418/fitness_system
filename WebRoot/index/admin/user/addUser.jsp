@@ -39,6 +39,7 @@
 				$("#password").focus();
 				return false;
 			}
+			alert("添加成功！！！");
 			return true;
 	}
 	</script>
@@ -82,7 +83,7 @@
 			<li>
 				<label>&nbsp;</label>
 				<input type="submit" class="btn" value="确认" onclick="toAdd()"/>
-				<a href="index/admin/user/addUser.jsp"><input type="button" class="btn" value="返回" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="index/admin/user/addUser.jsp"><input type="button" class="btn" value="重置" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			</li>
 		</ul>
 	</div>
@@ -92,7 +93,7 @@
 	 * 这个使用的单选框选择判断
 	 */
 	function toAdd(){
-			alert("添加成功！！！");
+			
 	}
 	$(function(){
 		$('.tablelist tbody tr:odd').addClass('odd');

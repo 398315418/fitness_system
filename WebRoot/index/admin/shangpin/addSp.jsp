@@ -20,7 +20,7 @@
 	<span>位置：</span>
 	<ul class="placeul">
 		<li><a href="#">器械管理</a></li>
-		<li><a href="#">添加活器械信息</a></li>
+		<li><a href="#">添加器械信息</a></li>
 	</ul>
 </div>
 <form action = "shangpin.do?method=addSp" method = "post"  enctype = "multipart/form-data" class="validate" onsubmit="return add();" >
@@ -29,19 +29,19 @@
 		<ul class="forminfo">
 			<li>
 				<label>器械名称</label>
-				<input name="weizhi" id="xilie"  type="text" class="dfinput required" /><font color="red">*</font>必填
+				<input name="name" id="name"  type="text" class="dfinput required" /><font color="red">*</font>必填
 			</li>
 			<li>
 				<label>内容</label>
-				<textarea name="qiwen" id="editor_id" cols="100" rows="8" style="width:400px;height:100px" class="dfinput required" ></textarea><font color="red">*</font>
+				<textarea name="content" id="content" cols="100" rows="8" style="width:400px;height:100px" class="dfinput required" ></textarea><font color="red">*</font>
 			</li>
 			<li>
 				<label>品牌</label>
-				<input name="date" id="xilie"  type="text" class="dfinput required " /><font color="red">*</font>
+				<input name="brand" id="brand"  type="text" class="dfinput required " /><font color="red">*</font>
 			</li>
 				<li>
 				<label>图片</label>
-				<input name="rizhao" id="photo" type="file" onchange="preview(this,'preview','imghead',150,100)"/><font color="red">*</font>
+				<input name="photo" id="photo" type="file" onchange="preview(this,'preview','imghead',150,100)"/><font color="red">*</font>
 				<div id="preview">
 					<img id="imghead" width="100" height="150" />
 				</div>
@@ -56,12 +56,29 @@
 	</div>
 </form>
 <script type="text/javascript">
-	/**
-	 * 这个使用的单选框选择判断
-	 */
-	function toAdd(){
-			alert("添加成功！！！");
-	}
+		/**
+		 * 这个使用的单选框选择判断
+		 */
+		 function add(){
+				var name=$.trim($("#name").val());
+				var brand=$.trim($("#brand").val());
+				
+					if(name.length==0){
+						alert("名称不能为空");
+						$("#name").focus();
+						return false;
+					}
+					if(brand.length==0){
+						alert("品牌不能为空");
+						$("#brand").focus();
+						return false;
+					}
+					alert("添加成功！！！");
+					return true;
+			}
+		function toAdd(){
+			
+		}
 	$(function(){
 		$('.tablelist tbody tr:odd').addClass('odd');
 		

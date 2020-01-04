@@ -30,28 +30,29 @@
 		<ul class="forminfo">
 		<li>
 				<label>姓名</label>
-				<input name="weizhi" id="xilie" value="<%=list.get(0).get("hairTeacherName")%>" type="text" class="dfinput required" /><font color="red">*</font>必填
+				<input name="name" id="name" value="<%=list.get(0).get("hairTeacherName")%>" type="text" class="dfinput required" /><font color="red">*</font>必填
 			</li>
 			<li>
 				<label>年龄</label>
-				<input name="chushui" id="xilie" value="<%=list.get(0).get("age")%>"  type="text" class="dfinput required" /><font color="red">*</font>
+				<input name="age" id="age" value="<%=list.get(0).get("age")%>"  type="text" class="dfinput required" /><font color="red">*</font>
 			</li>
 			
 			<li>
 				<label>电话</label>
-				<input name="mianji" id="xilie" value="<%=list.get(0).get("phone")%>" type="text" class="dfinput required" /><font color="red">*</font>
+				<input name="phone" id="phone" value="<%=list.get(0).get("phone")%>" type="text" class="dfinput required" /><font color="red">*</font>
 			</li>
 			<li>
 				<label>家庭住址</label>
-				<input name="zuowu" id="xilie" value="<%=list.get(0).get("address")%>" type="text" class="dfinput required" /><font color="red">*</font>
+				<input name="address" id="address" value="<%=list.get(0).get("address")%>" type="text" class="dfinput required" /><font color="red">*</font>
 			</li>
 			<li>
 				<label>工作年限</label>
-				<input name="type" id="xilie" value="<%=list.get(0).get("level")%>" type="text" class="dfinput required" />（年）<font color="red">*</font>
+				<input name="worktime" id="worktime" value="<%=list.get(0).get("level")%>" type="text" class="dfinput required" />（年）<font color="red">*</font>
 			</li>
 			<li>
 				<label>描述</label>
-				<textarea name="dimao" id="editor_id" cols="100" rows="8" style="width:400px;height:100px" class="dfinput required" ></textarea><font color="red">*</font>
+				<textarea name="detail" id="detail" cols="100" rows="8" style="width:400px;height:100px" class="dfinput required" 
+				 ></textarea><font color="red">*</font>
 			</li>
 			<li>
 				<label>图片</label>
@@ -73,9 +74,58 @@
 	/**
 	 * 这个使用的单选框选择判断
 	 */
-	function toAdd(){
-			alert("修改成功！！！");
-	}
+		 function add(){
+				var name=$.trim($("#name").val());
+				var age=$.trim($("#age").val());
+				var phone=$.trim($("#phone").val());
+				var address=$.trim($("#address").val());
+				var worktime=$.trim($("#worktime").val());
+					if(name.length==0){
+						alert("姓名不能为空");
+						$("#name").focus();
+						return false;
+					}
+					if(age.length==0){
+						alert("年龄不能为空");
+						$("#age").focus();
+						return false;
+					}
+					if(phone.length==0){
+						alert("电话不能为空");
+						$("#phone").focus();
+						return false;
+					}
+					if(worktime.length==0){
+						alert("工作年限不能为空");
+						$("worktime").focus();
+						return false;
+					}
+					if(address.length==0){
+						alert("家庭地址不能为空");
+						$("#address").focus();
+						return false;
+					}
+					if(!(/^1[3456789]\d{9}$/.test(phone))){ 
+				        alert("手机号码有误，请重填");  
+				        $("#phone").focus();
+				        return false; 
+				    } 
+					if(!utils.isNumber(age)){//判断账号是否是数字或字母
+		        		alert("年龄信息有误，请重填");
+		        		$("#age").focus();
+		        		return false;
+		        	}
+					if(!utils.isNumber(worktime)){//判断账号是否是数字或字母
+		        		alert("工作年限信息有误，请重填");
+		        		$("#worktime").focus();
+		        		return false;
+		        	}
+					alert("修改成功！！！");
+					return true;
+			}
+		function toAdd(){
+			
+		}
 	$(function(){
 		$('.tablelist tbody tr:odd').addClass('odd');
 		

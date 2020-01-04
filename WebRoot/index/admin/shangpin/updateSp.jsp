@@ -30,19 +30,19 @@
 		<ul class="forminfo">
 		<li>
 				<label>器械名称</label>
-				<input name="weizhi" id="xilie" value="<%=list.get(0).get("title")%>" type="text" class="dfinput required" /><font color="red">*</font>必填
+				<input name="name" id="name" value="<%=list.get(0).get("title")%>" type="text" class="dfinput required" /><font color="red">*</font>必填
 			</li>
 			<li>
 				<label>内容</label>
-				<textarea name="qiwen" id="editor_id" cols="100" rows="8" style="width:400px;height:100px" class="dfinput required" ></textarea><font color="red">*</font>
+				<textarea name="content" id="content" cols="100" rows="8" style="width:400px;height:100px" class="dfinput required" ></textarea><font color="red">*</font>
 			</li>
 			<li>
 				<label>品牌</label>
-				<input name="date" id="xilie" value="<%=list.get(0).get("time")%>"  type="text" class="dfinput required "  /><font color="red">*</font>
+				<input name="brand" id="brand" value="<%=list.get(0).get("time")%>"  type="text" class="dfinput required "  /><font color="red">*</font>
 			</li>
 			<li>
 				<label>图片</label>
-				<input name="rizhao" id="rizhao" type="file" onchange="preview(this,'preview','imghead',150,100)"/><font color="red">*</font>
+				<input name="photo" id="photo" type="file" onchange="preview(this,'preview','imghead',150,100)"/><font color="red">*</font>
 				<div id="preview">
 					<img id="imghead" width="150" height="200" src = "<%=basePath %>image/<%=list.get(0).get("photo") %>" />
 				</div>
@@ -56,12 +56,29 @@
 	</div>
 </form>
 <script type="text/javascript">
-	/**
-	 * 这个使用的单选框选择判断
-	 */
-	function toAdd(){
-			alert("修改成功！！！");
-	}
+		/**
+		 * 这个使用的单选框选择判断
+		 */
+		 function add(){
+				var name=$.trim($("#name").val());
+				var brand=$.trim($("#brand").val());
+				
+					if(name.length==0){
+						alert("名称不能为空");
+						$("#name").focus();
+						return false;
+					}
+					if(brand.length==0){
+						alert("品牌不能为空");
+						$("#brand").focus();
+						return false;
+					}
+					alert("修改成功！！！");
+					return true;
+			}
+		function toAdd(){
+			
+		}
 	$(function(){
 		$('.tablelist tbody tr:odd').addClass('odd');
 		

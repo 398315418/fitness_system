@@ -76,6 +76,10 @@
 			<c:forEach items="${list}" var="list" varStatus="vs">
 			<tr>
 				<td>${vs.index+1}</td>
+<%-- 				<a href="javascript:void(0);" onclick="selGr('<%=id %>');"><div class="one_top_left1" align="center"> --%>
+<!--             	<div class="one_top_left1_top1"><img src="images/head.jpg" width="80" height="75"/></div> -->
+<!--                 <div class="one_top_left1_footer1">个人信息</div> -->
+<!--             </div></a> -->
 				<td>${list.account}</td>
 				<td>${list.fname}</td>
 				<td>${list.yuyue}</td>

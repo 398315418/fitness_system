@@ -29,19 +29,19 @@
 		<ul class="forminfo">
 			<li>
 				<label>课程名称</label>
-				<input name="fname" id="xilie"  type="text" class="dfinput required" /><font color="red">*</font>必填
+				<input name="fname" id="fname"  type="text" class="dfinput required" /><font color="red">*</font>必填
 			</li>
 			<li>
 				<label>价格</label>
-				<input name="total" id="xilie"  type="text" class="dfinput required" />（元）<font color="red">*</font>
+				<input name="price" id="price"  type="text" class="dfinput required" />（元）<font color="red">*</font>
 			</li>
 			<li>
 				<label>描述</label>
-				<textarea name="bianhao" id="editor_id" cols="100" rows="8" style="width:400px;height:100px" class="dfinput required" ></textarea><font color="red">*</font>
+				<textarea name="detail" id="detail" cols="100" rows="8" style="width:400px;height:100px" class="dfinput required" ></textarea><font color="red">*</font>
 			</li>
 			<li>
 				<label>图片</label>
-				<input name="yshui" id="photo" type="file" onchange="preview(this,'preview','imghead',150,100)"/><font color="red">*</font>
+				<input name="photo" id="photo" type="file" onchange="preview(this,'preview','imghead',150,100)"/><font color="red">*</font>
 				<div id="preview">
 					<img id="imghead" width="100" height="150" />
 				</div>
@@ -58,8 +58,29 @@
 	/**
 	 * 这个使用的单选框选择判断
 	 */
+	 function add(){
+			var fname=$.trim($("#fname").val());
+			var price=$.trim($("#price").val());
+				if(fname.length==0){
+					alert("名称不能为空");
+					$("#fname").focus();
+					return false;
+				}
+				if(price.length==0){
+					alert("价格不能为空");
+					$("#price").focus();
+					return false;
+				}
+				if(!(/^\\d+(\\.\\d+)?|([0-9]*[1-9][0-9]*)$/.test(price))){
+			        alert("价格有误，请重填");  
+			        $("#price").focus();
+			        return false; 
+			    } 
+				alert("添加成功！！！");
+				return true;
+		}
 	function toAdd(){
-			alert("添加成功！！！");
+			
 	}
 	$(function(){
 		$('.tablelist tbody tr:odd').addClass('odd');

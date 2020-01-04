@@ -23,7 +23,7 @@
 		}
 	}
     </script>
-	
+
 </head>
 		<%
 			List<Map<String, String>> list = (List<Map<String, String>>)request.getAttribute("list");
